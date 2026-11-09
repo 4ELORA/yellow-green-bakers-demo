@@ -1,5 +1,6 @@
+from pathlib import Path
 
-<!DOCTYPE html>
+html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,83 +10,41 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--green:#172b22;--gold:#c5a66a;--cream:#f7f4ec;--paper:#fffdf8;--ink:#242720;--muted:#77786f;--line:#e8e2d5}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif}
 .demo{background:#e9dfc9;color:#51452f;text-align:center;padding:9px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
 header{background:var(--paper);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
 .nav{max-width:1200px;margin:auto;padding:17px 25px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;color:var(--green);text-decoration:none}
-.logo{width:43px;height:43px;border:1px solid var(--gold);display:grid;place-items:center;font:20px 'Playfair Display'}
-.brand strong{font:18px 'Playfair Display'}
-.brand small{display:block;font:600 9px 'DM Sans';letter-spacing:2px;color:#71816a;margin-top:4px}
-nav{display:flex;gap:25px}
-nav a{font-size:12px;color:#45483f;text-decoration:none}
-.cartbtn{background:var(--green);color:white;border:0;padding:12px 18px;cursor:pointer}
-.hero{background:var(--green);color:white}
-.hero-inner{max-width:1200px;margin:auto;padding:65px 25px;min-height:530px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:45px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--green);text-decoration:none}.logo{width:43px;height:43px;border:1px solid var(--gold);display:grid;place-items:center;font:20px 'Playfair Display'}
+.brand strong{font:18px 'Playfair Display'}.brand small{display:block;font:600 9px 'DM Sans';letter-spacing:2px;color:#71816a;margin-top:4px}
+nav{display:flex;gap:25px}nav a{font-size:12px;color:#45483f;text-decoration:none}.cartbtn{background:var(--green);color:white;border:0;padding:12px 18px;cursor:pointer}
+.hero{background:var(--green);color:white}.hero-inner{max-width:1200px;margin:auto;padding:65px 25px;min-height:530px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:45px}
 .eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700}
-h1{font:600 clamp(45px,6vw,75px)/1.08 'Playfair Display';margin:22px 0}
-h1 em{color:#d4bd8d}
-.hero p{max-width:450px;color:#d4d9d1;font-size:14px;line-height:1.9}
-.actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
-.btn{display:inline-block;padding:14px 20px;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
-.gold{background:var(--gold);color:var(--green)}
-.outline{border:1px solid #829083;color:white}
-.hero-img{height:400px;position:relative}
-.hero-img img{width:100%;height:100%;object-fit:cover}
-.hero-img:after{content:"";position:absolute;inset:12px;border:1px solid #ffffff65}
+h1{font:600 clamp(45px,6vw,75px)/1.08 'Playfair Display';margin:22px 0}h1 em{color:#d4bd8d}
+.hero p{max-width:450px;color:#d4d9d1;font-size:14px;line-height:1.9}.actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 20px;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase}.gold{background:var(--gold);color:var(--green)}.outline{border:1px solid #829083;color:white}
+.hero-img{height:400px;position:relative}.hero-img img{width:100%;height:100%;object-fit:cover}.hero-img:after{content:"";position:absolute;inset:12px;border:1px solid #ffffff65}
 .stamp{position:absolute;bottom:20px;left:-20px;background:var(--cream);color:var(--green);padding:15px 20px;font:italic 16px 'Playfair Display';z-index:1}
 .promise{background:var(--cream);padding:20px;display:flex;justify-content:center;gap:55px;flex-wrap:wrap;color:#586454;font-size:10px;letter-spacing:1px;text-transform:uppercase}
-section{max-width:1200px;margin:auto;padding:75px 25px}
-.heading{text-align:center;margin-bottom:35px}
-.heading .eyebrow{color:#71816a}
-h2{font:600 clamp(32px,4vw,45px) 'Playfair Display';color:var(--green);margin:12px 0}
-.heading p{font-size:13px;color:var(--muted);line-height:1.8}
-.categories,.products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
-.category{height:260px;position:relative;overflow:hidden;color:white;text-decoration:none}
-.category img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.category:hover img{transform:scale(1.06)}
-.category:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#111b15c9,transparent 75%)}
-.category span{position:absolute;z-index:1;bottom:20px;left:18px;font:23px 'Playfair Display'}
-.featured{background:var(--cream)}
-.featured-inner{max-width:1200px;margin:auto;padding:75px 25px}
-.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:25px 0}
-.filter{background:transparent;border:1px solid #d9d3c5;padding:9px 15px;color:#596052;cursor:pointer;font-size:10px;text-transform:uppercase}
-.filter.active{background:var(--green);color:white}
-.products{grid-template-columns:repeat(4,1fr)}
-.product{background:white;border:1px solid var(--line)}
-.product img{width:100%;height:190px;object-fit:cover;display:block}
-.product-body{padding:15px}
-.product small{color:#71816a;text-transform:uppercase;letter-spacing:1px}
-.product h3{font:19px 'Playfair Display';color:var(--green);margin:8px 0}
-.product p{font-size:11px;color:var(--muted);line-height:1.6;min-height:34px}
-.bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.price{font-size:13px;font-weight:700;color:var(--green)}
-.add{border:1px solid var(--green);background:white;color:var(--green);padding:9px 10px;font-size:10px;cursor:pointer}
-.add:hover{background:var(--green);color:white}
-.story{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
-.story img{width:100%;height:380px;object-fit:cover}
-.story p{font-size:13px;color:var(--muted);line-height:1.9}
-.story .eyebrow{color:#71816a}
-.visit{background:var(--green);color:white;padding:55px 25px}
-.visit-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:25px}
-.visit h2{color:white}
-.visit p{font-size:12px;color:#d0d8d0}
-.visit-card{border:1px solid #71816a;padding:20px;min-width:220px;font-size:12px;line-height:2}
-.visit-card strong{color:var(--gold);display:block}
-footer{background:#101e18;color:white;padding:30px 25px}
-.foot{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-footer small{color:#aeb9ad;font-size:10px}
+section{max-width:1200px;margin:auto;padding:75px 25px}.heading{text-align:center;margin-bottom:35px}.heading .eyebrow{color:#71816a}
+h2{font:600 clamp(32px,4vw,45px) 'Playfair Display';color:var(--green);margin:12px 0}.heading p{font-size:13px;color:var(--muted);line-height:1.8}
+.categories,.products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.category{height:260px;position:relative;overflow:hidden;color:white;text-decoration:none}
+.category img{width:100%;height:100%;object-fit:cover;transition:.5s}.category:hover img{transform:scale(1.06)}
+.category:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#111b15c9,transparent 75%)}.category span{position:absolute;z-index:1;bottom:20px;left:18px;font:23px 'Playfair Display'}
+.featured{background:var(--cream)}.featured-inner{max-width:1200px;margin:auto;padding:75px 25px}
+.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:25px 0}.filter{background:transparent;border:1px solid #d9d3c5;padding:9px 15px;color:#596052;cursor:pointer;font-size:10px;text-transform:uppercase}
+.filter.active{background:var(--green);color:white}.products{grid-template-columns:repeat(4,1fr)}.product{background:white;border:1px solid var(--line)}
+.product img{width:100%;height:190px;object-fit:cover;display:block}.product-body{padding:15px}.product small{color:#71816a;text-transform:uppercase;letter-spacing:1px}
+.product h3{font:19px 'Playfair Display';color:var(--green);margin:8px 0}.product p{font-size:11px;color:var(--muted);line-height:1.6;min-height:34px}
+.bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}.price{font-size:13px;font-weight:700;color:var(--green)}
+.add{border:1px solid var(--green);background:white;color:var(--green);padding:9px 10px;font-size:10px;cursor:pointer}.add:hover{background:var(--green);color:white}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.story img{width:100%;height:380px;object-fit:cover}.story p{font-size:13px;color:var(--muted);line-height:1.9}.story .eyebrow{color:#71816a}
+.visit{background:var(--green);color:white;padding:55px 25px}.visit-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.visit h2{color:white}.visit p{font-size:12px;color:#d0d8d0}.visit-card{border:1px solid #71816a;padding:20px;min-width:220px;font-size:12px;line-height:2}
+.visit-card strong{color:var(--gold);display:block}footer{background:#101e18;color:white;padding:30px 25px}.foot{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}footer small{color:#aeb9ad;font-size:10px}
 .cart-panel{position:fixed;right:20px;bottom:20px;width:min(360px,calc(100vw - 40px));background:white;border:1px solid var(--line);box-shadow:0 18px 50px #0003;padding:20px;z-index:20;display:none}
-.cart-panel.open{display:block}
-.cart-head,.cart-line,.total{display:flex;justify-content:space-between;gap:10px}
-.cart-head h3{font:22px 'Playfair Display';color:var(--green)}
-.cart-items{max-height:200px;overflow:auto}
-.cart-line{padding:10px 0;border-bottom:1px solid var(--line);font-size:11px}
-.total{padding:15px 0;font-weight:bold;color:var(--green)}
-.checkout{width:100%;background:var(--green);color:white;border:0;padding:13px;cursor:pointer}
-.note{font-size:10px;color:var(--muted);line-height:1.6}
+.cart-panel.open{display:block}.cart-head,.cart-line,.total{display:flex;justify-content:space-between;gap:10px}.cart-head h3{font:22px 'Playfair Display';color:var(--green)}
+.cart-items{max-height:200px;overflow:auto}.cart-line{padding:10px 0;border-bottom:1px solid var(--line);font-size:11px}.total{padding:15px 0;font-weight:bold;color:var(--green)}
+.checkout{width:100%;background:var(--green);color:white;border:0;padding:13px;cursor:pointer}.note{font-size:10px;color:var(--muted);line-height:1.6}
 @media(max-width:800px){nav{display:none}.hero-inner{grid-template-columns:1fr}.hero-img{height:300px}.categories,.products{grid-template-columns:repeat(2,1fr)}.story{grid-template-columns:1fr}.visit-inner{display:block}}
 @media(max-width:450px){section,.featured-inner{padding:55px 16px}.nav{padding:12px 15px}.category{height:190px}.category span{font-size:19px}.product img{height:140px}.product-body{padding:10px}.promise{gap:15px}.hero-inner{padding:45px 18px}.hero-img{height:250px}}
 </style>
@@ -99,8 +58,7 @@ footer small{color:#aeb9ad;font-size:10px}
 </div></header>
 <main>
 <div class="hero" id="home"><div class="hero-inner">
-<div><div class="eyebrow">A neighbourhood favourite · Fresh every day</div>
-<h1>Made with care.<br><em>Served with love.</em></h1>
+<div><div class="eyebrow">A neighbourhood favourite · Fresh every day</div><h1>Made with care.<br><em>Served with love.</em></h1>
 <p>From beautifully baked pastries to the little treats worth sharing, discover the everyday pleasure of something freshly made.</p>
 <div class="actions"><a class="btn gold" href="#menu">Explore the menu</a><a class="btn outline" href="#story">Our story</a></div></div>
 <div class="hero-img"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=85" alt="Fresh artisan bread"><div class="stamp">Fresh from our kitchen</div></div>
@@ -118,12 +76,10 @@ footer small{color:#aeb9ad;font-size:10px}
 <div class="filters"><button class="filter active" onclick="filter('all',this)">All items</button><button class="filter" onclick="filter('bakery',this)">Bakery</button><button class="filter" onclick="filter('sweets',this)">Sweets</button><button class="filter" onclick="filter('snacks',this)">Snacks</button><button class="filter" onclick="filter('grocery',this)">Daily store</button></div>
 <div class="products" id="products"></div>
 </div></div>
-<section id="story"><div class="story">
-<img src="https://images.unsplash.com/photo-1556217477-d325251ece38?auto=format&fit=crop&w=1000&q=85" alt="Baker preparing pastries">
+<section id="story"><div class="story"><img src="https://images.unsplash.com/photo-1556217477-d325251ece38?auto=format&fit=crop&w=1000&q=85" alt="Baker preparing pastries">
 <div><div class="eyebrow">The Yellow Green experience</div><h2>Good food brings people together.</h2>
 <p>A neighbourhood bakery should feel welcoming from the very first visit. This website concept gives Yellow Green Bakers a refined online home where customers can explore the menu, discover favourites and find the store with ease.</p>
-<p>The final story, product range and business details can be personalised with the owner's approved information and photography.</p></div>
-</div></section>
+<p>The final story, product range and business details can be personalised with the owner's approved information and photography.</p></div></div></section>
 <div class="visit" id="visit"><div class="visit-inner"><div><div class="eyebrow">We'd love to welcome you</div><h2>Your neighbourhood stop<br>for something delicious.</h2><p>Store address, opening hours and official contact details will be added after approval.</p></div>
 <div class="visit-card"><strong>Find Yellow Green Bakers</strong>Address to be confirmed<br>Official phone number to be added<br>Opening hours to be confirmed</div></div></div>
 </main>
@@ -145,13 +101,54 @@ const data=[
 ["Everyday Tea","grocery","A pantry essential for your daily cup.",480,"1544787219-7f47ccb76574"]
 ];
 let cart=[];
-function render(list=data){   document.getElementById('products').innerHTML = list.map((p, i) => `     <article class="product">       <img loading="lazy"         src="https://images.unsplash.com/photo-${p[4]}?auto=format&fit=crop&w=650&q=80"         alt="${p[0]}">       <div class="product-body">         <small>${p[1]}</small>         <h3>${p[0]}</h3>         <p>${p[2]}</p>         <div class="bottom">           <span class="price">Rs. ${p[3]}</span>           <button class="add" onclick="add('${p[0]}')">             Add to bag +           </button>         </div>       </div>     </article>   `).join(''); }'+p[4]+'?auto=format&fit=crop&w=650&q=80" alt="'+p[0]+'"><div class="product-body"><small>'+p[1]+'</small><h3>'+p[0]+'</h3><p>'+p[2]+'</p><div class="bottom"><span class="price">Rs. '+p[3]+'</span><button class="add" onclick="add(\\''+p[0]+'\\')">Add to bag +</button></div></div></article>').join('')}
-function filter(cat,btn){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');render(cat==='all'?data:data.filter(p=>p[1]===cat))}
-function choose(cat){setTimeout(()=>{let b=[...document.querySelectorAll('.filter')].find(x=>x.textContent.toLowerCase().includes(cat==='grocery'?'daily':cat));if(b)filter(cat,b)},60)}
-function add(name){let p=data.find(x=>x[0]===name),item=cart.find(x=>x[0]===name);if(item)item[5]++;else cart.push([...p,1]);update();document.getElementById('cart').classList.add('open')}
-function update(){document.getElementById('count').textContent=cart.reduce((s,p)=>s+p[5],0);document.getElementById('total').textContent='Rs. '+cart.reduce((s,p)=>s+p[3]*p[5],0);document.getElementById('items').innerHTML=cart.length?cart.map(p=>'<div class="cart-line"><span>'+p[0]+' × '+p[5]+'</span><b>Rs. '+p[3]*p[5]+'</b></div>').join(''):'Your bag is empty.'}
-function toggleCart(){document.getElementById('cart').classList.toggle('open')}
+function render(list=data){
+  document.getElementById("products").innerHTML=list.map(p=>`
+    <article class="product">
+      <img loading="lazy" src="https://images.unsplash.com/photo-${p[4]}?auto=format&fit=crop&w=650&q=80" alt="${p[0]}">
+      <div class="product-body">
+        <small>${p[1]}</small><h3>${p[0]}</h3><p>${p[2]}</p>
+        <div class="bottom"><span class="price">Rs. ${p[3]}</span>
+          <button class="add" data-product="${p[0]}">Add to bag +</button>
+        </div>
+      </div>
+    </article>`).join("");
+}
+document.getElementById("products").addEventListener("click",event=>{
+  const button=event.target.closest("button[data-product]");
+  if(button)add(button.dataset.product);
+});
+function filter(cat,btn){
+  document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  render(cat==="all"?data:data.filter(p=>p[1]===cat));
+}
+function choose(cat){
+  setTimeout(()=>{
+    const label=cat==="grocery"?"daily":cat;
+    const button=[...document.querySelectorAll(".filter")].find(x=>x.textContent.toLowerCase().includes(label));
+    if(button)filter(cat,button);
+  },60);
+}
+function add(name){
+  const product=data.find(p=>p[0]===name);
+  if(!product)return;
+  const item=cart.find(p=>p.name===name);
+  if(item)item.quantity++;
+  else cart.push({name:product[0],price:product[3],quantity:1});
+  update();
+  document.getElementById("cart").classList.add("open");
+}
+function update(){
+  document.getElementById("count").textContent=cart.reduce((sum,p)=>sum+p.quantity,0);
+  document.getElementById("total").textContent="Rs. "+cart.reduce((sum,p)=>sum+p.price*p.quantity,0);
+  document.getElementById("items").innerHTML=cart.length?cart.map(p=>`<div class="cart-line"><span>${p.name} × ${p.quantity}</span><b>Rs. ${p.price*p.quantity}</b></div>`).join(""):"Your bag is empty.";
+}
+function toggleCart(){document.getElementById("cart").classList.toggle("open")}
 render();
 </script>
 </body>
-</html>
+</html>'''
+
+path = Path("/mnt/data/index.html")
+path.write_text(html, encoding="utf-8")
+print(f"Created {path} ({len(html):,} characters)")
