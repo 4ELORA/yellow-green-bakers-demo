@@ -3,351 +3,155 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#174d32">
-<title>Yellow Green Bakers | Fresh Every Day</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#172b22">
+<title>Yellow Green Bakers | Freshly Made</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --green:#174d32;
-  --green2:#236b43;
-  --yellow:#f4d928;
-  --cream:#fffbea;
-  --text:#20251f;
-  --muted:#6d756e;
-}
+:root{--green:#172b22;--gold:#c5a66a;--cream:#f7f4ec;--paper:#fffdf8;--ink:#242720;--muted:#77786f;--line:#e8e2d5}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;color:var(--text)}
-.demo{background:var(--yellow);color:var(--green);text-align:center;padding:9px;font-size:12px;font-weight:900;letter-spacing:1px}
-header{background:var(--green);color:white;position:sticky;top:0;z-index:5}
-.nav{max-width:1150px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{font-weight:900;font-size:18px;line-height:1.2}
-.logo{background:var(--yellow);color:var(--green);padding:12px;border-radius:12px;margin-right:8px;display:inline-block}
-nav{display:flex;gap:20px}
-nav a{color:white;text-decoration:none;font-size:14px;font-weight:bold}
-.cartbtn,.primary,.add{background:var(--yellow);color:var(--green);border:0;border-radius:8px;padding:11px 15px;font-weight:bold;cursor:pointer}
-.hero{background:linear-gradient(110deg,#174d32,#2b7546);color:white}
-.hero-inner{max-width:1150px;margin:auto;padding:75px 22px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px}
-.eyebrow{color:var(--yellow);font-size:12px;font-weight:bold;letter-spacing:2px}
-h1{font-size:clamp(42px,6vw,70px);line-height:1.05;margin:18px 0}
-.hero p{color:#e1eee4;line-height:1.8;max-width:500px}
-.actions{display:flex;gap:12px;margin-top:25px;flex-wrap:wrap}
-.primary,.secondary{display:inline-block;padding:14px 20px;text-decoration:none;font-weight:bold;border-radius:8px}
-.secondary{border:1px solid white;color:white}
-.hero-art{display:grid;place-items:center;position:relative;min-height:320px}
-.sun{width:290px;height:290px;background:var(--yellow);border-radius:50%;display:grid;place-items:center;font-size:150px}
-.float{position:absolute;background:white;color:var(--green);padding:13px;border-radius:10px;font-weight:bold}
-.one{top:35px;left:0}.two{bottom:30px;right:0}
-.trust{background:var(--cream);padding:18px;text-align:center;color:var(--green);font-weight:bold}
-section{max-width:1150px;margin:auto;padding:65px 22px}
-.heading{text-align:center;margin-bottom:30px}
-.heading h2{font-size:36px;color:var(--green);margin:10px}
-.heading p{color:var(--muted)}
-.categories,.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
-.cat{border:1px solid #e8eadf;border-radius:15px;padding:22px;text-align:center}
-.cat .emoji{font-size:43px}
-.cat h3{color:var(--green)}
-.cat p{font-size:13px;color:var(--muted)}
-.products{background:#f8faf5}
-.products section{padding-top:65px;padding-bottom:65px}
-.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:25px}
-.filter{padding:9px 15px;border-radius:30px;border:1px solid #dce4d8;background:white;color:var(--green);font-weight:bold;cursor:pointer}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif}
+.demo{background:#e9dfc9;color:#51452f;text-align:center;padding:9px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+header{background:var(--paper);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;padding:17px 25px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--green);text-decoration:none}
+.logo{width:43px;height:43px;border:1px solid var(--gold);display:grid;place-items:center;font:20px 'Playfair Display'}
+.brand strong{font:18px 'Playfair Display'}
+.brand small{display:block;font:600 9px 'DM Sans';letter-spacing:2px;color:#71816a;margin-top:4px}
+nav{display:flex;gap:25px}
+nav a{font-size:12px;color:#45483f;text-decoration:none}
+.cartbtn{background:var(--green);color:white;border:0;padding:12px 18px;cursor:pointer}
+.hero{background:var(--green);color:white}
+.hero-inner{max-width:1200px;margin:auto;padding:65px 25px;min-height:530px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:45px}
+.eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1{font:600 clamp(45px,6vw,75px)/1.08 'Playfair Display';margin:22px 0}
+h1 em{color:#d4bd8d}
+.hero p{max-width:450px;color:#d4d9d1;font-size:14px;line-height:1.9}
+.actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 20px;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.gold{background:var(--gold);color:var(--green)}
+.outline{border:1px solid #829083;color:white}
+.hero-img{height:400px;position:relative}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-img:after{content:"";position:absolute;inset:12px;border:1px solid #ffffff65}
+.stamp{position:absolute;bottom:20px;left:-20px;background:var(--cream);color:var(--green);padding:15px 20px;font:italic 16px 'Playfair Display';z-index:1}
+.promise{background:var(--cream);padding:20px;display:flex;justify-content:center;gap:55px;flex-wrap:wrap;color:#586454;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+section{max-width:1200px;margin:auto;padding:75px 25px}
+.heading{text-align:center;margin-bottom:35px}
+.heading .eyebrow{color:#71816a}
+h2{font:600 clamp(32px,4vw,45px) 'Playfair Display';color:var(--green);margin:12px 0}
+.heading p{font-size:13px;color:var(--muted);line-height:1.8}
+.categories,.products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.category{height:260px;position:relative;overflow:hidden;color:white;text-decoration:none}
+.category img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.category:hover img{transform:scale(1.06)}
+.category:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#111b15c9,transparent 75%)}
+.category span{position:absolute;z-index:1;bottom:20px;left:18px;font:23px 'Playfair Display'}
+.featured{background:var(--cream)}
+.featured-inner{max-width:1200px;margin:auto;padding:75px 25px}
+.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:25px 0}
+.filter{background:transparent;border:1px solid #d9d3c5;padding:9px 15px;color:#596052;cursor:pointer;font-size:10px;text-transform:uppercase}
 .filter.active{background:var(--green);color:white}
-.product{background:white;border:1px solid #e8eadf;border-radius:15px;overflow:hidden}
-.photo{height:145px;background:linear-gradient(135deg,#fff6c8,#f2f5e9);display:grid;place-items:center;font-size:65px}
+.products{grid-template-columns:repeat(4,1fr)}
+.product{background:white;border:1px solid var(--line)}
+.product img{width:100%;height:190px;object-fit:cover;display:block}
 .product-body{padding:15px}
-.product h3{font-size:16px;color:var(--green);margin:0 0 8px}
-.product p{font-size:12px;color:var(--muted);min-height:30px}
-.price-row{display:flex;align-items:center;justify-content:space-between;gap:5px}
-.price{font-weight:900;color:var(--green)}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
-.about-art{background:var(--cream);border-radius:18px;min-height:270px;display:grid;place-items:center;font-size:110px}
-.about p{color:var(--muted);line-height:1.8}
-.info{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.info div{background:var(--cream);padding:18px;border-radius:12px}
-.info strong{display:block;color:var(--green);margin-bottom:8px}
-.info span{font-size:13px;color:var(--muted)}
-footer{background:#123b27;color:white;padding:35px 22px}
-.foot{max-width:1150px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-footer small{color:#b8cbbb}
-.cart-panel{position:fixed;right:18px;bottom:18px;width:min(360px,calc(100vw - 36px));background:white;border-radius:16px;box-shadow:0 15px 55px #0003;z-index:10;padding:18px;display:none}
+.product small{color:#71816a;text-transform:uppercase;letter-spacing:1px}
+.product h3{font:19px 'Playfair Display';color:var(--green);margin:8px 0}
+.product p{font-size:11px;color:var(--muted);line-height:1.6;min-height:34px}
+.bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.price{font-size:13px;font-weight:700;color:var(--green)}
+.add{border:1px solid var(--green);background:white;color:var(--green);padding:9px 10px;font-size:10px;cursor:pointer}
+.add:hover{background:var(--green);color:white}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.story img{width:100%;height:380px;object-fit:cover}
+.story p{font-size:13px;color:var(--muted);line-height:1.9}
+.story .eyebrow{color:#71816a}
+.visit{background:var(--green);color:white;padding:55px 25px}
+.visit-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.visit h2{color:white}
+.visit p{font-size:12px;color:#d0d8d0}
+.visit-card{border:1px solid #71816a;padding:20px;min-width:220px;font-size:12px;line-height:2}
+.visit-card strong{color:var(--gold);display:block}
+footer{background:#101e18;color:white;padding:30px 25px}
+.foot{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+footer small{color:#aeb9ad;font-size:10px}
+.cart-panel{position:fixed;right:20px;bottom:20px;width:min(360px,calc(100vw - 40px));background:white;border:1px solid var(--line);box-shadow:0 18px 50px #0003;padding:20px;z-index:20;display:none}
 .cart-panel.open{display:block}
-.cart-head{display:flex;justify-content:space-between}
-.cart-head h3{margin:0;color:var(--green)}
-.close{border:0;padding:8px;border-radius:50%;cursor:pointer}
-.cart-items{max-height:210px;overflow:auto;margin:12px 0}
-.cart-line{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #eee;font-size:13px}
-.cart-total{display:flex;justify-content:space-between;font-weight:bold;color:var(--green);padding:10px 0}
-.checkout{width:100%;background:var(--green);color:white;padding:12px;border:0;border-radius:8px;font-weight:bold;cursor:pointer}
-.note{font-size:11px;color:var(--muted);line-height:1.5}
-@media(max-width:800px){
- nav{display:none}
- .hero-inner{grid-template-columns:1fr;padding-top:50px}
- .categories,.grid{grid-template-columns:repeat(2,1fr)}
- .about{grid-template-columns:1fr}
- .info{grid-template-columns:1fr}
-}
-@media(max-width:430px){
- .categories,.grid{gap:9px}
- .cat{padding:12px 5px}
- .product-body{padding:10px}
- .photo{height:110px}
-}
+.cart-head,.cart-line,.total{display:flex;justify-content:space-between;gap:10px}
+.cart-head h3{font:22px 'Playfair Display';color:var(--green)}
+.cart-items{max-height:200px;overflow:auto}
+.cart-line{padding:10px 0;border-bottom:1px solid var(--line);font-size:11px}
+.total{padding:15px 0;font-weight:bold;color:var(--green)}
+.checkout{width:100%;background:var(--green);color:white;border:0;padding:13px;cursor:pointer}
+.note{font-size:10px;color:var(--muted);line-height:1.6}
+@media(max-width:800px){nav{display:none}.hero-inner{grid-template-columns:1fr}.hero-img{height:300px}.categories,.products{grid-template-columns:repeat(2,1fr)}.story{grid-template-columns:1fr}.visit-inner{display:block}}
+@media(max-width:450px){section,.featured-inner{padding:55px 16px}.nav{padding:12px 15px}.category{height:190px}.category span{font-size:19px}.product img{height:140px}.product-body{padding:10px}.promise{gap:15px}.hero-inner{padding:45px 18px}.hero-img{height:250px}}
 </style>
 </head>
 <body>
-
-<div class="demo">
-DEMO WEBSITE • SAMPLE PRODUCTS & PRICES • NO REAL ORDERS
-</div>
-
-<header>
-<div class="nav">
-  <div class="brand">
-    <span class="logo">YG</span>
-    YELLOW GREEN<br>
-    <small style="color:#f4d928;letter-spacing:2px">BAKERS & STORE</small>
-  </div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#categories">Categories</a>
-    <a href="#products">Products</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <button class="cartbtn" onclick="toggleCart()">
-    🛒 Cart <span id="cartCount">0</span>
-  </button>
-</div>
-</header>
-
+<div class="demo">Website concept preview · Sample products and prices</div>
+<header><div class="nav">
+<a class="brand" href="#home"><span class="logo">YG</span><span><strong>Yellow Green</strong><small>BAKERS & STORE</small></span></a>
+<nav><a href="#home">Home</a><a href="#collections">Collections</a><a href="#menu">Our Menu</a><a href="#story">Our Story</a><a href="#visit">Visit Us</a></nav>
+<button class="cartbtn" onclick="toggleCart()">BAG (<span id="count">0</span>)</button>
+</div></header>
 <main>
-<div class="hero" id="home">
-<div class="hero-inner">
-  <div>
-    <div class="eyebrow">FRESHLY MADE • EVERY DAY</div>
-    <h1>A little joy<br>in every bite.</h1>
-    <p>
-      From oven-fresh bakery favourites to traditional sweets
-      and everyday essentials — discover a deliciously
-      convenient shopping experience.
-    </p>
-    <div class="actions">
-      <a class="primary" href="#products">Explore Products</a>
-      <a class="secondary" href="#about">Our Story</a>
-    </div>
-  </div>
-  <div class="hero-art">
-    <div class="sun">🥐</div>
-    <div class="float one">✨ Fresh & Tasty</div>
-    <div class="float two">Made with care 💚</div>
-  </div>
-</div>
-</div>
-
-<div class="trust">
-🥖 Bakery Favourites &nbsp; • &nbsp;
-🍬 Traditional Sweets &nbsp; • &nbsp;
-🥨 Snacks & Nimco &nbsp; • &nbsp;
-🛒 Everyday Essentials
-</div>
-
-<section id="categories">
-<div class="heading">
-  <div class="eyebrow" style="color:#236b43">BROWSE OUR SELECTION</div>
-  <h2>Something for every craving</h2>
-  <p>Explore the store by category.</p>
-</div>
+<div class="hero" id="home"><div class="hero-inner">
+<div><div class="eyebrow">A neighbourhood favourite · Fresh every day</div>
+<h1>Made with care.<br><em>Served with love.</em></h1>
+<p>From beautifully baked pastries to the little treats worth sharing, discover the everyday pleasure of something freshly made.</p>
+<div class="actions"><a class="btn gold" href="#menu">Explore the menu</a><a class="btn outline" href="#story">Our story</a></div></div>
+<div class="hero-img"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=85" alt="Fresh artisan bread"><div class="stamp">Fresh from our kitchen</div></div>
+</div></div>
+<div class="promise"><span>Freshly prepared</span><span>Quality ingredients</span><span>Made for sharing</span><span>Your local store</span></div>
+<section id="collections"><div class="heading"><div class="eyebrow">Explore the store</div><h2>A little something for everyone</h2><p>Discover the flavours and everyday essentials our neighbourhood loves.</p></div>
 <div class="categories">
-  <div class="cat">
-    <div class="emoji">🥐</div>
-    <h3>Bakery</h3>
-    <p>Breads, cakes & pastries</p>
-  </div>
-  <div class="cat">
-    <div class="emoji">🍬</div>
-    <h3>Sweets</h3>
-    <p>Traditional sweet treats</p>
-  </div>
-  <div class="cat">
-    <div class="emoji">🥨</div>
-    <h3>Nimco & Snacks</h3>
-    <p>Crunchy savoury bites</p>
-  </div>
-  <div class="cat">
-    <div class="emoji">🛒</div>
-    <h3>Departmental</h3>
-    <p>Everyday grocery needs</p>
-  </div>
-</div>
-</section>
-
-<div class="products" id="products">
-<section>
-<div class="heading">
-  <div class="eyebrow" style="color:#236b43">CUSTOMER FAVOURITES</div>
-  <h2>Popular Picks</h2>
-  <p>Sample products and prices for demonstration.</p>
-</div>
-
-<div class="filters">
-  <button class="filter active" onclick="filterProducts('all',this)">All</button>
-  <button class="filter" onclick="filterProducts('bakery',this)">Bakery</button>
-  <button class="filter" onclick="filterProducts('sweets',this)">Sweets</button>
-  <button class="filter" onclick="filterProducts('snacks',this)">Snacks</button>
-  <button class="filter" onclick="filterProducts('grocery',this)">Grocery</button>
-</div>
-
-<div class="grid" id="productGrid"></div>
-</section>
-</div>
-
-<section id="about">
-<div class="about">
-  <div class="about-art">🍰</div>
-  <div>
-    <div class="eyebrow" style="color:#236b43">A WARM WELCOME</div>
-    <h2 style="color:#174d32">Good food. Good moments.</h2>
-    <p>
-      Yellow Green Bakers is presented here as a friendly
-      neighbourhood destination for bakery treats, sweets,
-      snacks and daily essentials.
-    </p>
-    <p>
-      This demo showcases how the business could introduce
-      its products online with a clean, easy-to-use storefront.
-      The business story and verified information can be added
-      after approval from the owner.
-    </p>
-  </div>
-</div>
-</section>
-
-<section id="contact" style="padding-top:0">
-<div class="heading">
-  <div class="eyebrow" style="color:#236b43">GET IN TOUCH</div>
-  <h2>Visit or Contact Us</h2>
-  <p>Demo contact section — owner-approved details can be added later.</p>
-</div>
-<div class="info">
-  <div>
-    <strong>📍 Store Location</strong>
-    <span>Address to be confirmed.</span>
-  </div>
-  <div>
-    <strong>📞 Phone & WhatsApp</strong>
-    <span>Official contact number to be added.</span>
-  </div>
-  <div>
-    <strong>🕒 Opening Hours</strong>
-    <span>Business hours to be confirmed.</span>
-  </div>
-</div>
-</section>
+<a class="category" href="#menu" onclick="choose('bakery')"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=85" alt="Pastries"><span>Bakery</span></a>
+<a class="category" href="#menu" onclick="choose('sweets')"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85" alt="Cake"><span>Sweets & Cakes</span></a>
+<a class="category" href="#menu" onclick="choose('snacks')"><img src="https://images.unsplash.com/photo-1621939514649-280e2aa2f4c2?auto=format&fit=crop&w=700&q=85" alt="Snacks"><span>Snacks</span></a>
+<a class="category" href="#menu" onclick="choose('grocery')"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=700&q=85" alt="Groceries"><span>Daily Store</span></a>
+</div></section>
+<div class="featured" id="menu"><div class="featured-inner">
+<div class="heading"><div class="eyebrow">A taste of our selection</div><h2>Customer favourites</h2><p>Sample menu to show how products and online ordering can look.</p></div>
+<div class="filters"><button class="filter active" onclick="filter('all',this)">All items</button><button class="filter" onclick="filter('bakery',this)">Bakery</button><button class="filter" onclick="filter('sweets',this)">Sweets</button><button class="filter" onclick="filter('snacks',this)">Snacks</button><button class="filter" onclick="filter('grocery',this)">Daily store</button></div>
+<div class="products" id="products"></div>
+</div></div>
+<section id="story"><div class="story">
+<img src="https://images.unsplash.com/photo-1556217477-d325251ece38?auto=format&fit=crop&w=1000&q=85" alt="Baker preparing pastries">
+<div><div class="eyebrow">The Yellow Green experience</div><h2>Good food brings people together.</h2>
+<p>A neighbourhood bakery should feel welcoming from the very first visit. This website concept gives Yellow Green Bakers a refined online home where customers can explore the menu, discover favourites and find the store with ease.</p>
+<p>The final story, product range and business details can be personalised with the owner's approved information and photography.</p></div>
+</div></section>
+<div class="visit" id="visit"><div class="visit-inner"><div><div class="eyebrow">We'd love to welcome you</div><h2>Your neighbourhood stop<br>for something delicious.</h2><p>Store address, opening hours and official contact details will be added after approval.</p></div>
+<div class="visit-card"><strong>Find Yellow Green Bakers</strong>Address to be confirmed<br>Official phone number to be added<br>Opening hours to be confirmed</div></div></div>
 </main>
-
-<footer>
-<div class="foot">
-  <div>
-    <strong>YELLOW GREEN BAKERS</strong><br>
-    <small>Freshness, flavour & everyday convenience.</small>
-  </div>
-  <small>Website concept demonstration • Sample content only</small>
-</div>
-</footer>
-
-<div class="cart-panel" id="cartPanel">
-  <div class="cart-head">
-    <h3>Your Demo Cart</h3>
-    <button class="close" onclick="toggleCart()">✕</button>
-  </div>
-  <div class="cart-items" id="cartItems">Your cart is empty.</div>
-  <div class="cart-total">
-    <span>Subtotal</span>
-    <span id="cartTotal">Rs. 0</span>
-  </div>
-  <button class="checkout" onclick="demoCheckout()">Preview Checkout</button>
-  <p class="note">
-    Demo only: checkout does not submit an order, collect
-    personal details, or contact the store.
-  </p>
-</div>
-
+<footer><div class="foot"><div><strong>Yellow Green Bakers</strong><br><small>Freshness for life's everyday moments.</small></div><small>Website concept preview · Sample content only</small></div></footer>
+<div class="cart-panel" id="cart"><div class="cart-head"><h3>Your shopping bag</h3><button onclick="toggleCart()">Close</button></div><div class="cart-items" id="items">Your bag is empty.</div><div class="total"><span>Subtotal</span><span id="total">Rs. 0</span></div><button class="checkout" onclick="alert('Concept preview only. No order has been placed.')">Preview checkout</button><p class="note">This preview does not place orders or collect customer information.</p></div>
 <script>
-const products = [
- {name:"Butter Croissant",cat:"bakery",desc:"A flaky, buttery bakery classic.",price:180,emoji:"🥐"},
- {name:"Chocolate Cake Slice",cat:"bakery",desc:"A rich chocolate treat.",price:250,emoji:"🍰"},
- {name:"Fresh Milk Bread",cat:"bakery",desc:"Soft bread for everyday meals.",price:160,emoji:"🍞"},
- {name:"Assorted Cupcakes",cat:"bakery",desc:"A colourful sweet bite.",price:220,emoji:"🧁"},
- {name:"Gulab Jamun",cat:"sweets",desc:"A traditional syrup-soaked favourite.",price:300,emoji:"🍡"},
- {name:"Mix Mithai Box",cat:"sweets",desc:"A selection of classic sweets.",price:850,emoji:"🍬"},
- {name:"Jalebi",cat:"sweets",desc:"Crispy, syrupy and delicious.",price:200,emoji:"🥨"},
- {name:"Kaju Katli",cat:"sweets",desc:"A delicate nutty sweet.",price:500,emoji:"💛"},
- {name:"Masala Nimco",cat:"snacks",desc:"A crunchy savoury snack mix.",price:180,emoji:"🥜"},
- {name:"Salted Chips",cat:"snacks",desc:"A light, crispy snack.",price:100,emoji:"🍟"},
- {name:"Tea Biscuits",cat:"snacks",desc:"A perfect companion for chai.",price:140,emoji:"🍪"},
- {name:"Mixed Nuts Pack",cat:"snacks",desc:"A handy snack-time mix.",price:350,emoji:"🥜"},
- {name:"Everyday Tea",cat:"grocery",desc:"A pantry essential.",price:480,emoji:"🫖"},
- {name:"Cooking Oil",cat:"grocery",desc:"A daily kitchen staple.",price:620,emoji:"🫗"},
- {name:"Sugar Pack",cat:"grocery",desc:"An everyday household essential.",price:170,emoji:"🛍️"},
- {name:"Mineral Water",cat:"grocery",desc:"A refreshing bottled drink.",price:80,emoji:"💧"}
+const data=[
+["Butter Croissant","bakery","A delicate, flaky pastry baked to golden perfection.",180,"1555507036-ab1f4038808a"],
+["Chocolate Cake Slice","bakery","Rich chocolate layers for a little afternoon treat.",250,"1578985545062-69928b1d9587"],
+["Fresh Milk Bread","bakery","Soft, freshly baked bread for the family table.",160,"1509440159596-0249088772ff"],
+["Assorted Cupcakes","bakery","A delightful selection for sharing.",220,"1519869325930-281384150729"],
+["Gulab Jamun","sweets","A much-loved traditional sweet.",300,"1578985545062-69928b1d9587"],
+["Celebration Cake","sweets","A centrepiece for special moments.",1200,"1578985545062-69928b1d9587"],
+["Jalebi","sweets","A crisp, golden traditional favourite.",200,"1555507036-ab1f4038808a"],
+["Kaju Katli","sweets","A delicate nut-based sweet for sharing.",500,"1519869325930-281384150729"],
+["Masala Nimco","snacks","A crunchy savoury mix with a little spice.",180,"1621939514649-280e2aa2f4c2"],
+["Tea Biscuits","snacks","A classic companion to a cup of chai.",140,"1558961363-fa8fdf82db35"],
+["Mixed Nuts Pack","snacks","A satisfying mix for any time of day.",350,"1505576399274-b13c6840c5a1"],
+["Everyday Tea","grocery","A pantry essential for your daily cup.",480,"1544787219-7f47ccb76574"]
 ];
-
-let cart = [];
-
-function renderProducts(items=products) {
-  document.getElementById("productGrid").innerHTML = items.map(p => `
-    <article class="product">
-      <div class="photo">${p.emoji}</div>
-      <div class="product-body">
-        <h3>${p.name}</h3>
-        <p>${p.desc}</p>
-        <div class="price-row">
-          <span class="price">Rs. ${p.price}</span>
-          <button class="add" onclick="addToCart('${p.name}')">Add +</button>
-        </div>
-      </div>
-    </article>
-  `).join("");
-}
-
-function filterProducts(category,button) {
-  document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
-  button.classList.add("active");
-  renderProducts(category==="all" ? products : products.filter(p=>p.cat===category));
-}
-
-function addToCart(name) {
-  const item=cart.find(p=>p.name===name);
-  if(item) item.qty++;
-  else {
-    const product=products.find(p=>p.name===name);
-    cart.push({...product,qty:1});
-  }
-  updateCart();
-  document.getElementById("cartPanel").classList.add("open");
-}
-
-function updateCart() {
-  const count=cart.reduce((s,p)=>s+p.qty,0);
-  const total=cart.reduce((s,p)=>s+p.price*p.qty,0);
-  document.getElementById("cartCount").textContent=count;
-  document.getElementById("cartTotal").textContent="Rs. "+total;
-  document.getElementById("cartItems").innerHTML=cart.length
-    ? cart.map(p=>`<div class="cart-line"><span>${p.name} × ${p.qty}</span><strong>Rs. ${p.price*p.qty}</strong></div>`).join("")
-    : "Your cart is empty.";
-}
-
-function toggleCart() {
-  document.getElementById("cartPanel").classList.toggle("open");
-}
-
-function demoCheckout() {
-  alert("This is a website demo. No order has been placed and no customer information has been sent.");
-}
-
-renderProducts();
+let cart=[];
+function render(list=data){document.getElementById('products').innerHTML=list.map((p)=>'<article class="product"><img loading="lazy" src="https://images.unsplash.com/photo-'+p[4]+'?auto=format&fit=crop&w=650&q=80" alt="'+p[0]+'"><div class="product-body"><small>'+p[1]+'</small><h3>'+p[0]+'</h3><p>'+p[2]+'</p><div class="bottom"><span class="price">Rs. '+p[3]+'</span><button class="add" onclick="add(\\''+p[0]+'\\')">Add to bag +</button></div></div></article>').join('')}
+function filter(cat,btn){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');render(cat==='all'?data:data.filter(p=>p[1]===cat))}
+function choose(cat){setTimeout(()=>{let b=[...document.querySelectorAll('.filter')].find(x=>x.textContent.toLowerCase().includes(cat==='grocery'?'daily':cat));if(b)filter(cat,b)},60)}
+function add(name){let p=data.find(x=>x[0]===name),item=cart.find(x=>x[0]===name);if(item)item[5]++;else cart.push([...p,1]);update();document.getElementById('cart').classList.add('open')}
+function update(){document.getElementById('count').textContent=cart.reduce((s,p)=>s+p[5],0);document.getElementById('total').textContent='Rs. '+cart.reduce((s,p)=>s+p[3]*p[5],0);document.getElementById('items').innerHTML=cart.length?cart.map(p=>'<div class="cart-line"><span>'+p[0]+' × '+p[5]+'</span><b>Rs. '+p[3]*p[5]+'</b></div>').join(''):'Your bag is empty.'}
+function toggleCart(){document.getElementById('cart').classList.toggle('open')}
+render();
 </script>
 </body>
 </html>
-
