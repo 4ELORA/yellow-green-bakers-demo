@@ -1,1 +1,353 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#174d32">
+<title>Yellow Green Bakers | Fresh Every Day</title>
+<style>
+:root {
+  --green:#174d32;
+  --green2:#236b43;
+  --yellow:#f4d928;
+  --cream:#fffbea;
+  --text:#20251f;
+  --muted:#6d756e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;color:var(--text)}
+.demo{background:var(--yellow);color:var(--green);text-align:center;padding:9px;font-size:12px;font-weight:900;letter-spacing:1px}
+header{background:var(--green);color:white;position:sticky;top:0;z-index:5}
+.nav{max-width:1150px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{font-weight:900;font-size:18px;line-height:1.2}
+.logo{background:var(--yellow);color:var(--green);padding:12px;border-radius:12px;margin-right:8px;display:inline-block}
+nav{display:flex;gap:20px}
+nav a{color:white;text-decoration:none;font-size:14px;font-weight:bold}
+.cartbtn,.primary,.add{background:var(--yellow);color:var(--green);border:0;border-radius:8px;padding:11px 15px;font-weight:bold;cursor:pointer}
+.hero{background:linear-gradient(110deg,#174d32,#2b7546);color:white}
+.hero-inner{max-width:1150px;margin:auto;padding:75px 22px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px}
+.eyebrow{color:var(--yellow);font-size:12px;font-weight:bold;letter-spacing:2px}
+h1{font-size:clamp(42px,6vw,70px);line-height:1.05;margin:18px 0}
+.hero p{color:#e1eee4;line-height:1.8;max-width:500px}
+.actions{display:flex;gap:12px;margin-top:25px;flex-wrap:wrap}
+.primary,.secondary{display:inline-block;padding:14px 20px;text-decoration:none;font-weight:bold;border-radius:8px}
+.secondary{border:1px solid white;color:white}
+.hero-art{display:grid;place-items:center;position:relative;min-height:320px}
+.sun{width:290px;height:290px;background:var(--yellow);border-radius:50%;display:grid;place-items:center;font-size:150px}
+.float{position:absolute;background:white;color:var(--green);padding:13px;border-radius:10px;font-weight:bold}
+.one{top:35px;left:0}.two{bottom:30px;right:0}
+.trust{background:var(--cream);padding:18px;text-align:center;color:var(--green);font-weight:bold}
+section{max-width:1150px;margin:auto;padding:65px 22px}
+.heading{text-align:center;margin-bottom:30px}
+.heading h2{font-size:36px;color:var(--green);margin:10px}
+.heading p{color:var(--muted)}
+.categories,.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.cat{border:1px solid #e8eadf;border-radius:15px;padding:22px;text-align:center}
+.cat .emoji{font-size:43px}
+.cat h3{color:var(--green)}
+.cat p{font-size:13px;color:var(--muted)}
+.products{background:#f8faf5}
+.products section{padding-top:65px;padding-bottom:65px}
+.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:25px}
+.filter{padding:9px 15px;border-radius:30px;border:1px solid #dce4d8;background:white;color:var(--green);font-weight:bold;cursor:pointer}
+.filter.active{background:var(--green);color:white}
+.product{background:white;border:1px solid #e8eadf;border-radius:15px;overflow:hidden}
+.photo{height:145px;background:linear-gradient(135deg,#fff6c8,#f2f5e9);display:grid;place-items:center;font-size:65px}
+.product-body{padding:15px}
+.product h3{font-size:16px;color:var(--green);margin:0 0 8px}
+.product p{font-size:12px;color:var(--muted);min-height:30px}
+.price-row{display:flex;align-items:center;justify-content:space-between;gap:5px}
+.price{font-weight:900;color:var(--green)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.about-art{background:var(--cream);border-radius:18px;min-height:270px;display:grid;place-items:center;font-size:110px}
+.about p{color:var(--muted);line-height:1.8}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.info div{background:var(--cream);padding:18px;border-radius:12px}
+.info strong{display:block;color:var(--green);margin-bottom:8px}
+.info span{font-size:13px;color:var(--muted)}
+footer{background:#123b27;color:white;padding:35px 22px}
+.foot{max-width:1150px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+footer small{color:#b8cbbb}
+.cart-panel{position:fixed;right:18px;bottom:18px;width:min(360px,calc(100vw - 36px));background:white;border-radius:16px;box-shadow:0 15px 55px #0003;z-index:10;padding:18px;display:none}
+.cart-panel.open{display:block}
+.cart-head{display:flex;justify-content:space-between}
+.cart-head h3{margin:0;color:var(--green)}
+.close{border:0;padding:8px;border-radius:50%;cursor:pointer}
+.cart-items{max-height:210px;overflow:auto;margin:12px 0}
+.cart-line{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #eee;font-size:13px}
+.cart-total{display:flex;justify-content:space-between;font-weight:bold;color:var(--green);padding:10px 0}
+.checkout{width:100%;background:var(--green);color:white;padding:12px;border:0;border-radius:8px;font-weight:bold;cursor:pointer}
+.note{font-size:11px;color:var(--muted);line-height:1.5}
+@media(max-width:800px){
+ nav{display:none}
+ .hero-inner{grid-template-columns:1fr;padding-top:50px}
+ .categories,.grid{grid-template-columns:repeat(2,1fr)}
+ .about{grid-template-columns:1fr}
+ .info{grid-template-columns:1fr}
+}
+@media(max-width:430px){
+ .categories,.grid{gap:9px}
+ .cat{padding:12px 5px}
+ .product-body{padding:10px}
+ .photo{height:110px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo">
+DEMO WEBSITE • SAMPLE PRODUCTS & PRICES • NO REAL ORDERS
+</div>
+
+<header>
+<div class="nav">
+  <div class="brand">
+    <span class="logo">YG</span>
+    YELLOW GREEN<br>
+    <small style="color:#f4d928;letter-spacing:2px">BAKERS & STORE</small>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="cartbtn" onclick="toggleCart()">
+    🛒 Cart <span id="cartCount">0</span>
+  </button>
+</div>
+</header>
+
+<main>
+<div class="hero" id="home">
+<div class="hero-inner">
+  <div>
+    <div class="eyebrow">FRESHLY MADE • EVERY DAY</div>
+    <h1>A little joy<br>in every bite.</h1>
+    <p>
+      From oven-fresh bakery favourites to traditional sweets
+      and everyday essentials — discover a deliciously
+      convenient shopping experience.
+    </p>
+    <div class="actions">
+      <a class="primary" href="#products">Explore Products</a>
+      <a class="secondary" href="#about">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="sun">🥐</div>
+    <div class="float one">✨ Fresh & Tasty</div>
+    <div class="float two">Made with care 💚</div>
+  </div>
+</div>
+</div>
+
+<div class="trust">
+🥖 Bakery Favourites &nbsp; • &nbsp;
+🍬 Traditional Sweets &nbsp; • &nbsp;
+🥨 Snacks & Nimco &nbsp; • &nbsp;
+🛒 Everyday Essentials
+</div>
+
+<section id="categories">
+<div class="heading">
+  <div class="eyebrow" style="color:#236b43">BROWSE OUR SELECTION</div>
+  <h2>Something for every craving</h2>
+  <p>Explore the store by category.</p>
+</div>
+<div class="categories">
+  <div class="cat">
+    <div class="emoji">🥐</div>
+    <h3>Bakery</h3>
+    <p>Breads, cakes & pastries</p>
+  </div>
+  <div class="cat">
+    <div class="emoji">🍬</div>
+    <h3>Sweets</h3>
+    <p>Traditional sweet treats</p>
+  </div>
+  <div class="cat">
+    <div class="emoji">🥨</div>
+    <h3>Nimco & Snacks</h3>
+    <p>Crunchy savoury bites</p>
+  </div>
+  <div class="cat">
+    <div class="emoji">🛒</div>
+    <h3>Departmental</h3>
+    <p>Everyday grocery needs</p>
+  </div>
+</div>
+</section>
+
+<div class="products" id="products">
+<section>
+<div class="heading">
+  <div class="eyebrow" style="color:#236b43">CUSTOMER FAVOURITES</div>
+  <h2>Popular Picks</h2>
+  <p>Sample products and prices for demonstration.</p>
+</div>
+
+<div class="filters">
+  <button class="filter active" onclick="filterProducts('all',this)">All</button>
+  <button class="filter" onclick="filterProducts('bakery',this)">Bakery</button>
+  <button class="filter" onclick="filterProducts('sweets',this)">Sweets</button>
+  <button class="filter" onclick="filterProducts('snacks',this)">Snacks</button>
+  <button class="filter" onclick="filterProducts('grocery',this)">Grocery</button>
+</div>
+
+<div class="grid" id="productGrid"></div>
+</section>
+</div>
+
+<section id="about">
+<div class="about">
+  <div class="about-art">🍰</div>
+  <div>
+    <div class="eyebrow" style="color:#236b43">A WARM WELCOME</div>
+    <h2 style="color:#174d32">Good food. Good moments.</h2>
+    <p>
+      Yellow Green Bakers is presented here as a friendly
+      neighbourhood destination for bakery treats, sweets,
+      snacks and daily essentials.
+    </p>
+    <p>
+      This demo showcases how the business could introduce
+      its products online with a clean, easy-to-use storefront.
+      The business story and verified information can be added
+      after approval from the owner.
+    </p>
+  </div>
+</div>
+</section>
+
+<section id="contact" style="padding-top:0">
+<div class="heading">
+  <div class="eyebrow" style="color:#236b43">GET IN TOUCH</div>
+  <h2>Visit or Contact Us</h2>
+  <p>Demo contact section — owner-approved details can be added later.</p>
+</div>
+<div class="info">
+  <div>
+    <strong>📍 Store Location</strong>
+    <span>Address to be confirmed.</span>
+  </div>
+  <div>
+    <strong>📞 Phone & WhatsApp</strong>
+    <span>Official contact number to be added.</span>
+  </div>
+  <div>
+    <strong>🕒 Opening Hours</strong>
+    <span>Business hours to be confirmed.</span>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="foot">
+  <div>
+    <strong>YELLOW GREEN BAKERS</strong><br>
+    <small>Freshness, flavour & everyday convenience.</small>
+  </div>
+  <small>Website concept demonstration • Sample content only</small>
+</div>
+</footer>
+
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-head">
+    <h3>Your Demo Cart</h3>
+    <button class="close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">Your cart is empty.</div>
+  <div class="cart-total">
+    <span>Subtotal</span>
+    <span id="cartTotal">Rs. 0</span>
+  </div>
+  <button class="checkout" onclick="demoCheckout()">Preview Checkout</button>
+  <p class="note">
+    Demo only: checkout does not submit an order, collect
+    personal details, or contact the store.
+  </p>
+</div>
+
+<script>
+const products = [
+ {name:"Butter Croissant",cat:"bakery",desc:"A flaky, buttery bakery classic.",price:180,emoji:"🥐"},
+ {name:"Chocolate Cake Slice",cat:"bakery",desc:"A rich chocolate treat.",price:250,emoji:"🍰"},
+ {name:"Fresh Milk Bread",cat:"bakery",desc:"Soft bread for everyday meals.",price:160,emoji:"🍞"},
+ {name:"Assorted Cupcakes",cat:"bakery",desc:"A colourful sweet bite.",price:220,emoji:"🧁"},
+ {name:"Gulab Jamun",cat:"sweets",desc:"A traditional syrup-soaked favourite.",price:300,emoji:"🍡"},
+ {name:"Mix Mithai Box",cat:"sweets",desc:"A selection of classic sweets.",price:850,emoji:"🍬"},
+ {name:"Jalebi",cat:"sweets",desc:"Crispy, syrupy and delicious.",price:200,emoji:"🥨"},
+ {name:"Kaju Katli",cat:"sweets",desc:"A delicate nutty sweet.",price:500,emoji:"💛"},
+ {name:"Masala Nimco",cat:"snacks",desc:"A crunchy savoury snack mix.",price:180,emoji:"🥜"},
+ {name:"Salted Chips",cat:"snacks",desc:"A light, crispy snack.",price:100,emoji:"🍟"},
+ {name:"Tea Biscuits",cat:"snacks",desc:"A perfect companion for chai.",price:140,emoji:"🍪"},
+ {name:"Mixed Nuts Pack",cat:"snacks",desc:"A handy snack-time mix.",price:350,emoji:"🥜"},
+ {name:"Everyday Tea",cat:"grocery",desc:"A pantry essential.",price:480,emoji:"🫖"},
+ {name:"Cooking Oil",cat:"grocery",desc:"A daily kitchen staple.",price:620,emoji:"🫗"},
+ {name:"Sugar Pack",cat:"grocery",desc:"An everyday household essential.",price:170,emoji:"🛍️"},
+ {name:"Mineral Water",cat:"grocery",desc:"A refreshing bottled drink.",price:80,emoji:"💧"}
+];
+
+let cart = [];
+
+function renderProducts(items=products) {
+  document.getElementById("productGrid").innerHTML = items.map(p => `
+    <article class="product">
+      <div class="photo">${p.emoji}</div>
+      <div class="product-body">
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <div class="price-row">
+          <span class="price">Rs. ${p.price}</span>
+          <button class="add" onclick="addToCart('${p.name}')">Add +</button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+function filterProducts(category,button) {
+  document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+  button.classList.add("active");
+  renderProducts(category==="all" ? products : products.filter(p=>p.cat===category));
+}
+
+function addToCart(name) {
+  const item=cart.find(p=>p.name===name);
+  if(item) item.qty++;
+  else {
+    const product=products.find(p=>p.name===name);
+    cart.push({...product,qty:1});
+  }
+  updateCart();
+  document.getElementById("cartPanel").classList.add("open");
+}
+
+function updateCart() {
+  const count=cart.reduce((s,p)=>s+p.qty,0);
+  const total=cart.reduce((s,p)=>s+p.price*p.qty,0);
+  document.getElementById("cartCount").textContent=count;
+  document.getElementById("cartTotal").textContent="Rs. "+total;
+  document.getElementById("cartItems").innerHTML=cart.length
+    ? cart.map(p=>`<div class="cart-line"><span>${p.name} × ${p.qty}</span><strong>Rs. ${p.price*p.qty}</strong></div>`).join("")
+    : "Your cart is empty.";
+}
+
+function toggleCart() {
+  document.getElementById("cartPanel").classList.toggle("open");
+}
+
+function demoCheckout() {
+  alert("This is a website demo. No order has been placed and no customer information has been sent.");
+}
+
+renderProducts();
+</script>
+</body>
+</html>
+
